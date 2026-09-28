@@ -1,0 +1,26 @@
+# .gitattributes — 统一行尾，避免跨平台检出差异
+#
+# 仓库内一律以 LF 存储；Windows 检出同样使用 LF，
+# 以免 scripts/*.sh 与 .tcl 在 Linux 上因 CRLF 解析失败。
+
+* text=auto eol=lf
+
+# 明确按文本处理的脚本与文档
+*.py    text eol=lf
+*.sh    text eol=lf
+*.tcl   text eol=lf
+*.md    text eol=lf
+*.toml  text eol=lf
+*.json  text eol=lf
+*.lock  text eol=lf
+
+# 二进制文件不做行尾转换
+*.png   binary
+*.jpg   binary
+*.pdf   binary
+*.gz    binary
+*.zip   binary
+*.xtc   binary
+*.trr   binary
+*.tpr   binary
+*.gro   -text

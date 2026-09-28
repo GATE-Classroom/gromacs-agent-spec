@@ -1,0 +1,14 @@
+schema_version = 1
+default_profile = "example-hpc"
+
+# 跨设备共享的 deployment profile。只保存稳定、非秘密的执行元数据。
+#
+# server_id 是跨设备稳定的**逻辑**标识，既不是主机名也不是 IP；
+# 设备专属的 alias 与 route 选择放在 ~/.config/zcode/gromacs-local.toml
+# （或由 GROMACS_LOCAL_CONFIG 指定的文件），不要写进本文件。
+[profiles.example-hpc]
+server_id = "example-hpc"
+execution_backend = "direct"          # 调度后端：direct | slurm | pbs ...
+remote_project_root = "~/Project/GROMACS"
+gmx_activation = "source /etc/profile.d/gromacs.sh"
+server_documentation = "../Servers/<server_id>/gromacs/README.md"

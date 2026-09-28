@@ -1,0 +1,16 @@
+schema_version = 1
+
+# 每台设备各自复制本模板到 ~/.config/zcode/gromacs-local.toml。
+# 真实文件不要放进同步工作区。
+#
+# 本文件只保存**设备本地的 route / alias 选择**，
+# 绝不保存密码、私钥或 token。
+[servers.example-hpc]
+preferred_routes = ["lan", "tailscale"]
+
+[servers.example-hpc.aliases]
+lan = "<device-local-lan-alias>"
+tailscale = "<device-local-tailscale-alias>"
+
+[temp]
+root = "D:/Temp/GROMACS"
